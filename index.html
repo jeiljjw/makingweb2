@@ -41,7 +41,7 @@
 </head>
 <body>
     <h1>웹페이지 주소 목록2</h1>
-    <div class="url-list">
+    <div class="url-list" id="urlList">
         <div class="url-item">
             <a href="https://js48jjw.github.io/visualmusic/" class="url-link" target="_blank">https://js48jjw.github.io/visualmusic/</a>
         </div>
@@ -111,13 +111,25 @@
         <div class="url-item">
             <a href="https://jeiljjw.github.io/SCALE/" class="url-link" target="_blank">https://jeiljjw.github.io/SCALE/</a>
         </div>
-        <div class="url-item">
-            <a href="https://jeiljjw.github.io/Weather/" class="url-link" target="_blank">https://jeiljjw.github.io/Weather/</a>
-        </div>
-        <div class="url-item">
-            <a href="https://jeiljjw.github.io/ailotto/" class="url-link" target="_blank">https://jeiljjw.github.io/ailotto/</a>
-        </div>
     </div>
+
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+ 
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlList = document.getElementById('urlList');
+            const items = Array.from(urlList.children);
+            shuffleArray(items);
+            items.forEach(item => urlList.appendChild(item));
+        });
+    </script>
+
+
 
 </body>
 </html>
